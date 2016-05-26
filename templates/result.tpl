@@ -103,6 +103,7 @@
 <div class="container">
 <div class="row">
 <div id="piechart" style="width: 900px; height: 500px;"></div>
+<div class="col s12"><a href="/" class="waves-effect waves-light btn">Пройти заново</a></div>
 </div>
 </div>
 

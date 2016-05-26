@@ -27,7 +27,7 @@ func main() {
 
 type Test struct {
 	Question, A, B, C, D, True string
-	Id                         int64
+	Id, N                      int64
 }
 
 func testStart(w http.ResponseWriter, r *http.Request) {
@@ -63,7 +63,7 @@ func testStart(w http.ResponseWriter, r *http.Request) {
 			if strings.Contains(k, "group") {
 				log.Println(ansM[k[len("group"):]])
 				log.Println(v[0])
-				if(ansM[k[len("group"):]] == v[0]) {
+				if ansM[k[len("group"):]] == v[0] {
 					TrueAnswers++
 				} else {
 					FalseAnswers++
@@ -112,6 +112,7 @@ func testStart(w http.ResponseWriter, r *http.Request) {
 		ansSlice := []Test{}
 		for i := 0; i < testLen && i < l; i++ {
 			e := rand.Intn(len(testSlice))
+			testSlice[e].N = int64(i + 1)
 			ansSlice = append(ansSlice, testSlice[e])
 			testSlice = RemoveTestSlice(testSlice, e, e+1)
 		}

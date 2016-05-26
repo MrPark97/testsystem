@@ -86,7 +86,7 @@
   {{range .Tests}}
     <div class="row">
       <div class="input-field col s12">
-        <h6>{{.Question}}</h6>
+        <h6>{{.N}}. {{.Question}}</h6>
         <p>
           <input class="with-gap" name="group{{.Id}}" value="{{.A}}" type="radio" id="test{{.Id}}A" checked/>
           <label for="test{{.Id}}A">{{.A}}</label>
